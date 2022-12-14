@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  tomcat:
+    image: tomcat:9.0.70-jdk17-temurin
+    ports:
+      - "5005:5005"
+    environment:
+      - JAVA_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=12345 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.local.only=false -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005
+    volumes:
+      - "./target/tomcat-bug-66388:/usr/local/tomcat/webapps/tomcat-bug-66388"
