@@ -9,11 +9,11 @@ mvn clean package
 ## See the application startup succeed with Tomcat 9.0.69
 
 ```shell
-docker-compose up -f docker-compose.9_0_69.yml
+docker-compose -f docker-compose.9_0_69.yml up
 ```
 
 ## See the application startup fail with Tomcat 9.0.70
 
 ```shell
-docker-compose up -f docker-compose.9_0_70.yml
+docker-compose -f docker-compose.9_0_70.yml up
 ```
